@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lanka Rubber</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0f0b0c;
+            color: #f4f1ed;
+            font-family: "Inter", sans-serif;
+        }
+
+        /* NAVBAR */
+        nav {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 28px;
+            border-bottom: 1px solid #d6d1ca;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #2f6b45;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            font-family: "Playfair Display", serif;
+            font-size: 23px;
+        }
+
+        .brand {
+            font-size: 17px;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+
+        .explore-btn {
+            background: #2f6b45;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            padding: 9px 12px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .explore-btn:hover {
+            background: #3c8055;
+        }
+
+        /* HERO */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 55px;
+
+            max-width: 1200px;
+            margin: auto;
+            padding: 45px 30px 35px;
+        }
+
+        .hero-content {
+            padding-top: 0;
+        }
+
+        .small-title {
+            color: #2f6b45;
+            font-family: "Playfair Display", serif;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            max-width: 520px;
+
+            font-family: "Playfair Display", serif;
+            font-size: 57px;
+            font-weight: 400;
+            line-height: 1.08;
+
+            margin-bottom: 15px;
+        }
+
+        .hero-description {
+            max-width: 500px;
+
+            color: #ddd8d3;
+            font-family: "Playfair Display", serif;
+            font-size: 15px;
+            line-height: 1.35;
+
+            margin-bottom: 18px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .story-btn,
+        .product-btn {
+            padding: 11px 21px;
+            border-radius: 10px;
+            font-family: "Playfair Display", serif;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .story-btn {
+            background: #2f6b45;
+            color: white;
+            border: none;
+        }
+
+        .product-btn {
+            background: #eeeeee;
+            color: #171414;
+            border: none;
+        }
+
+        /* IMAGE */
+        .hero-image {
+            width: 100%;
+            height: 265px;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* STORY */
+        .story {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 30px 50px;
+        }
+
+        .story h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 34px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .story-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background: #eeeeee;
+            color: #151515;
+
+            min-height: 295px;
+            padding: 10px;
+
+            border: 4px solid #080808;
+            border-radius: 11px;
+        }
+
+        .year {
+            font-family: "Kaisei Tokumin", serif;
+            font-size: 31px;
+            font-weight: 400;
+            color: #4b9b63;
+            letter-spacing: 5px;
+}
+        }
+
+        .card h3 {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 0 12px;
+            }
+
+            .brand {
+                font-size: 15px;
+            }
+
+            .explore-btn {
+                font-size: 14px;
+                padding: 8px 9px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 35px 20px 25px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero-image {
+                margin-top: 5px;
+                height: 280px;
+            }
+
+            .story {
+                padding: 0 15px 40px;
+            }
+
+            .story h2 {
+                font-size: 31px;
+            }
+
+            .story-cards {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .card {
+                min-height: 290px;
+            }
+
+            .year {
+                font-size: 27px;
+            }
+
+            .card p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .story-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+
+        <div class="logo-area">
+
+            <div class="logo">
+                R
+            </div>
+
+            <div class="brand">
+                Lanka Rubber
+            </div>
+
+        </div>
+
+        <button class="explore-btn">
+            Explore Rubber
+        </button>
+
+    </nav>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                Sri Lankan natural Rubber
+            </p>
+
+            <h1>
+                From the island's soil to the world.
+            </h1>
+
+            <p class="hero-description">
+                Discover Sri Lanka's natural rubber industry,
+                its history, growing regions and the products
+                created from one of the country's important
+                plantation crops.
+            </p>
+
+            <div class="buttons">
+
+                <button class="story-btn">
+                    Discover the Story
+                </button>
+
+                <button class="product-btn">
+                    View Product
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- RUBBER IMAGE -->
+        <div class="hero-image">
+        <img src="rubber.png" alt="Sri Lankan rubber plantation">
+        </div>
+
+    </section>
+
+
+    <!-- STORY SECTION -->
+    <section class="story">
+
+        <h2>
+            A SHORT STORY
+        </h2>
+
+        <div class="story-cards">
+
+            <!-- 1876 -->
+            <div class="card">
+
+                <div class="year">
+                    1876
+                </div>
+
+                <h3>
+                    Rubber Arrives in Sri Lanka
+                </h3>
+
+                <p>
+                    Rubber seedlings were planted at
+                    Henarathgoda Botanical Gardens in
+                    Gampaha, marking an important
+                    beginning for rubber cultivation
+                    in the country.
+                </p>
+
+            </div>
+
+
+            <!-- TODAY -->
+            <div class="card">
+
+                <div class="year">
+                    Today
+                </div>
+
+                <h3>
+                    A value added industry
+                </h3>
+
+                <p>
+                    Sri Lanka produces natural rubber
+                    and manufactures products such as
+                    gloves, tyres, hoses, footwear and
+                    rubber sheets for local and
+                    international markets.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+</body>
+</html>
