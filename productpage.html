@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubber Products</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #100d0d;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .product-page {
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
+            padding: 15px;
+        }
+
+        /* TOP BANNER */
+        .banner {
+            width: 100%;
+            height: 165px;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* MAIN SECTION */
+        .product-section {
+            display: grid;
+            grid-template-columns: 120px 1fr 1fr;
+            gap: 28px;
+            margin-top: 20px;
+            align-items: start;
+        }
+
+        /* LEFT THUMBNAILS */
+        .thumbnails {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+        }
+
+        .thumbnail {
+            width: 120px;
+            height: 94px;
+            border-radius: 6px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            background: #ddd;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ACTIVE THUMBNAIL */
+        .thumbnail.active {
+            border: 3px solid #ffb51b;
+        }
+
+        /* MAIN IMAGE */
+        .image-area {
+            text-align: center;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+            display: block;
+        }
+
+        /* DOTS */
+        .dots {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            margin-top: 12px;
+        }
+
+        .dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            border: none;
+        }
+
+        .dot.active {
+            background: #ffb51b;
+        }
+
+        /* DETAILS */
+        .details {
+            padding: 20px 5px;
+        }
+
+        .details h1 {
+            font-size: 27px;
+            font-weight: 400;
+            margin-bottom: 25px;
+        }
+
+        .price {
+            color: #ffb51b;
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .label {
+            font-size: 19px;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            width: 100%;
+            height: 47px;
+            background: #dbcaca;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 18px;
+            padding: 10px;
+            font-size: 17px;
+        }
+
+        .cart-btn {
+            width: 100%;
+            height: 60px;
+            background: #ffb51b;
+            border: none;
+            border-radius: 10px;
+            font-size: 19px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 3px;
+        }
+
+        .cart-btn:hover {
+            background: #e99e00;
+        }
+
+        /* MOBILE */
+        @media (max-width: 750px) {
+
+            .product-section {
+                grid-template-columns: 1fr;
+            }
+
+            .thumbnails {
+                flex-direction: row;
+                order: 2;
+                justify-content: center;
+            }
+
+            .thumbnail {
+                width: 75px;
+                height: 60px;
+            }
+
+            .image-area {
+                order: 1;
+            }
+
+            .details {
+                order: 3;
+            }
+
+            .banner {
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="product-page">
+
+    <!-- TOP IMAGE -->
+    <div class="banner">
+        <img src="images/rubber-banner.jpg" alt="Rubber Products">
+    </div>
+
+
+    <div class="product-section">
+
+        <!-- LEFT PHOTOS -->
+        <div class="thumbnails">
+
+            <div class="thumbnail active" onclick="changeImage(0)">
+                <img src="images/rubber1.jpg" alt="Rubber Sheet 1">
+            </div>
+
+            <div class="thumbnail" onclick="changeImage(1)">
+                <img src="images/rubber2.jpg" alt="Rubber Sheet 2">
+            </div>
+
+            <div class="thumbnail" onclick="changeImage(2)">
+                <img src="images/rubber3.jpg" alt="Rubber Sheet 3">
+            </div>
+
+        </div>
+
+
+        <!-- MAIN IMAGE -->
+        <div class="image-area">
+
+            <img
+                id="mainImage"
+                class="main-image"
+                src="images/rubber1.jpg"
+                alt="Rubber Sheet"
+            >
+
+            <!-- DOTS -->
+            <div class="dots">
+
+                <button class="dot active"
+                    onclick="changeImage(0)">
+                </button>
+
+                <button class="dot"
+                    onclick="changeImage(1)">
+                </button>
+
+                <button class="dot"
+                    onclick="changeImage(2)">
+                </button>
+
+                <button class="dot"
+                    onclick="changeImage(3)">
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT DETAILS -->
+        <div class="details">
+
+            <h1>Rubber Sheets</h1>
+
+            <div class="price">LKR</div>
+
+            <div class="label">Dimension</div>
+
+            <input
+                class="input-box"
+                type="text"
+                placeholder=""
+            >
+
+            <div class="label">Quantity</div>
+
+            <input
+                class="input-box"
+                type="number"
+                min="1"
+                placeholder=""
+            >
+
+            <button class="cart-btn">
+                Add to Cart
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    // Images
+    const images = [
+        "images/rubber1.jpg",
+        "images/rubber2.jpg",
+        "images/rubber3.jpg",
+        "images/rubber4.jpg"
+    ];
+
+
+    function changeImage(index) {
+
+        // Main image change
+        document.getElementById("mainImage").src = images[index];
+
+
+        // Remove active from thumbnails
+        const thumbnails =
+            document.querySelectorAll(".thumbnail");
+
+        thumbnails.forEach(function(thumbnail) {
+            thumbnail.classList.remove("active");
+        });
+
+
+        // Add active thumbnail
+        if (thumbnails[index]) {
+            thumbnails[index].classList.add("active");
+        }
+
+
+        // Remove active from dots
+        const dots =
+            document.querySelectorAll(".dot");
+
+        dots.forEach(function(dot) {
+            dot.classList.remove("active");
+        });
+
+
+        // Add active dot
+        if (dots[index]) {
+            dots[index].classList.add("active");
+        }
+    }
+
+</script>
+
+</body>
+</html>
